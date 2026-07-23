@@ -187,11 +187,8 @@ version could add:
 - Historical limit-order-book data
 - An Avellaneda–Stoikov quoting benchmark
 
-## Interview summary
+## Conclusion
 
-> I built a price-time-priority limit-order-book engine and used it to test an
-> inventory-aware market maker. The engine handles limit orders, market orders,
-> cancellations, FIFO queues, and partial fills. The strategy shifts its bid and
-> ask based on inventory, records every execution, and marks cash plus inventory
-> to the simulated fair price. I then compared quoting policies and showed that
-> higher simulated P&L can come with materially greater inventory exposure.
+This project demonstrates how a limit-order book matches orders and how a market maker balances spread capture against inventory risk. The inventory-aware strategy produced £45.92 in simulated P&L while limiting maximum absolute inventory to 8 shares, compared with 34 shares without inventory control.
+
+Although the simulator is deliberately simplified, the results highlight an important principle: higher profit can come with substantially greater exposure. Market-making strategies should therefore be assessed using inventory, drawdown and execution quality—not P&L alone.
